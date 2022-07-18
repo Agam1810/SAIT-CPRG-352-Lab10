@@ -21,7 +21,7 @@
             <c:if test="${message eq 'error'}">Sorry, something went wrong.</c:if>
             </p>
             <ul>
-            <c:forEach items="${notes}" var="note">
+            <c:forEach items="${notes}"  var="note">
                 <li><a href="notes?action=view&amp;noteId=${note.noteId}">${note.title} (${note.owner.firstName})</a><br></li>
             </c:forEach>
         </ul>
