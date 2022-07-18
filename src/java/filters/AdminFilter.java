@@ -28,6 +28,12 @@ public class AdminFilter implements Filter {
         HttpSession session = httpRequest.getSession();
         String email = (String)session.getAttribute("email");
         
+        if(email == null){
+         HttpServletResponse httpResponse = (HttpServletResponse) response;
+         httpResponse.sendRedirect("login");
+         return;
+     }
+        
         UserDB userDB = new UserDB();
         User user = userDB.get(email);
         
